@@ -14,14 +14,14 @@ var highscoreDisplay = document.getElementById("quiz");
 var endgameBtn = document.getElementById("quiz");
 var submitScoreBtn = document.getElementById("quiz");
 var highscoreDisplay = document.getElementById("quiz");
-var buttonA = document.getElementById("quiz");
-var buttonB = document.getElementById("quiz");
-var buttonC = document.getElementById("quiz");
-var buttonD = document.getElementById("quiz");
-var finalQuestionsIndex = document.getElementById("quiz");
-var currentQuestionsIndex = document.getElementById("quiz");
-var timeLeft = document.getElementById("quiz");
-var timeInterval = document.getElementById("quiz");
+var buttonA = document.getElementById("a");
+var buttonB = document.getElementById("b");
+var buttonC = document.getElementById("c");
+var buttonD = document.getElementById("d");
+var finalQuestionsIndex = document.getElementById("finalIndex");
+var currentQuestionsIndex = document.getElementById("currentIndex");
+var timeLeft = document.getElementById("timeLeft");
+var timeInterval = document.getElementById("timeInterval");
 var score = 0;
 var 
 
