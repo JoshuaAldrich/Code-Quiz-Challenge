@@ -1,0 +1,27 @@
+:root{
+background-color: rgb(220,220.220);
+}
+
+*{
+    font-family: Impact, fantasy;
+}
+
+p{
+    color: black;
+    text-align: center;
+    font-size: x-large;
+}
+
+h2{
+    margin-top: auto;
+}
+
+.container {
+    width: 100vh;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 80px;
+    margin: 0 auto;
+}
