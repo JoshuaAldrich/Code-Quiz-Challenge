@@ -9,48 +9,19 @@
 </head>
 
 <body>
+    <a href="highscores.html">Highscores</a>
     <!--starting page -->
     <div class="container">
-
-        <div id="startpage">
+        <!--Add timer-->
+        <div id="currentTime"></div>
+        <!--Add quiz-->
+        <div id="questionsDiv">
             <h2>Coding Quiz Challenge</h2>
-        <button id="startbtn">Start Quiz</button>
-        <button id="startPageHighscore" onclick="showHighscores()"> High Scores</button>
-        </div>
-
-        <!--Questions page -->
-        <div id="quiz">
-            <div id = "timer"> Time Left: </div>
-            <div id="questions"> <p>Questions</p> </div>
-            <button id="a" onclick="checkAnswer('a')">A </A></button>
-            <button id="b" onclick="checkAnswer('b')">B </button>
-            <button id="c" onclick="checkAnswer('c')">C </button>
-            <button id="d" onclick="checkAnswer('d')">D </button>
-            <div id="result">Results</div>
-        </div>
-
-        <!-- Highscore page -->
-        <div id="gameover">
-            <div id="finalScore"></div>
-            <input type="text" size = "50" placeholder="Enter your initials for high score" name="initials" id="initials"/>
-                <button id="submitScore">Submit Score </button>
-            </div>
-            <div id="highScoreContainer">
-                <div id="high-scorePage">
-                    <h3>User Initials</h3>
-                    <h3>Score</h3>
-                </div>
-                <div id = "highscore-initials"></div>
-                <div id = "highscore-score"></div>
-                </div>
-                <div id="endGameBtns">
-                    <button id="playAgain" onclick="replayQuiz()">Play Again</button>
-                    <button id="clearHighscore" onclick="clearScore()">Clear Highscores</button>
-                </div>
-            </div>
+            <p>Answer the following questions within the time limit, for wrong answers you will be deducted time.</p>
+            <ul id="choicesUl"></ul>
+        <button id="startTime">Start Quiz</button>
         </div>
     </div>
-
     <!-- Javascript link-->
     <script src="./Assets/JS/script.js"> </script>
 </body>
