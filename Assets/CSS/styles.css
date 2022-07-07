@@ -6,6 +6,7 @@ background-color: rgb(220,220.220);
     font-family: Impact, fantasy;
 }
 
+/*element sytles below*/
 p{
     color: black;
     text-align: center;
@@ -39,4 +40,29 @@ button {
 
 button:hover{
     background-color: purple;
+}
+
+/* Id styles below */
+#start {
+
+}
+
+#startbtn {
+
+}
+
+#highscorebtn {
+
+}
+
+#questions {
+
+}
+
+#finalScore {
+
+}
+
+#highscoreContainer {
+
 }
