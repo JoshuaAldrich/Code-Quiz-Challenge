@@ -54,9 +54,31 @@ button {
     font-size: 20px;
     padding: 20px;
     width: 300px;
-     margin-top: 10px;
+    margin-top: 10px;
 }
     
 button:hover{
     background-color: var(--tertiary);
+}
+
+#startOver {
+    position: relative;
+    padding: 10px;
+    font-size: 20px;
+    color: white;
+    top: 30%;
+    width: auto;
+    text-align: center;
+    text-decoration: none;
+}
+
+#clear {
+    position: relative;
+    padding: 10px;
+    font-size: 20px;
+    color: white;
+    top: 30%;
+    width: auto;
+    text-align: center;
+    text-decoration: none;
 }
