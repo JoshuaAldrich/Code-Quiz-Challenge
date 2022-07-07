@@ -85,15 +85,44 @@ var quizQuestions = [{
     choiceD: "alerts",
     correctAnswer: "d",
 },
-]
+];
 
 //function to cycle objects questions and answers
+function generateQuizQuestion(){
+    if (currentQuestionsIndex === finalQuestionsIndex){
+        return score();
+}
+
+var currentQuestion = quizQuestions[currentQuestionsIndex];
+questionsE1.innerHTML = "<p>" + currentQuestion.question + "</p>";
+buttonA.innerHTML = currentQuestion.choiceA;
+buttonB.innerHTML = currentQuestion.choiceB;
+buttonC.innerHTML = currentQuestion.choiceC;
+buttonD.innerHTML = currentQuestion.choiceD;
+};
 
 //start quiz to start timer
+function startQuizbBtn() {
+    generateQuizQuestion();
+
+    function startTimer(){
+        console.log('timer suppose to go')
+        var sec = 59;
+        var timer = setInterval(function(){
+            document.getElementById('timerDisplay').innerHTML='00:'+sec;
+            sec--;
+            if (sec < 0) {
+                clearInterval(timer);
+                alert("Time is up!")
+            }
+        }, 1000);
+    }
+}
 
 //show scores and save high scores
 
 //clear high scores
 
-
+//start the quiz
+startQuizDiv.addEventListener("click",startQuizbBtn);
 

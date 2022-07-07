@@ -11,38 +11,39 @@
 <body>
     <!--starting page -->
     <div class="container">
+
         <div id="start">
             <h2>Coding Quiz Challenge</h2>
-
-        <button id="startbtn">Start Quiz</button>
+        <button id="startbtn" onclick="startbutton()">Start Quiz</button>
         <button id="highscorebtn" onclick="showHighscores()"> High Scores</button>
         </div>
-    </div>
 
-    <div>
         <!--Questions page -->
-        <div> Time Left: </div>
-        <div id="questions"> <p>Questions</p> </div>
-        <button id="a"> A </A></button>
-        <button id="b"> B </button>
-        <button id="c"> C </button>
-        <button id="d"> D </button>
-        <div id="results">Results</div>
-    </div>
+        <div id="quiz">
+            <div> Time Left: </div>
+            <div id="questions"> <p>Questions</p> </div>
+            <button id="a" onclick="Answer('a')">A </A></button>
+            <button id="b" onclick="Answer('b')">B </button>
+            <button id="c" onclick="Answer('c')">C </button>
+            <button id="d" onclick="Answer('d')">D </button>
+            <div id="results">Results</div>
+        </div>
 
-    <!-- Highscore page -->
-    <div id="finalScore"></div>
-    <button id="submitScore">Submit Score </button>
-    <div id="highScoreContainer">
-        <div id="highscoreHeader">
-            <h3>User Initials</h3>
-            <h3>Score</h3>
+        <!-- Highscore page -->
+        <div>
+            <div id="finalScore"></div>
+            <button id="submitScore">Submit Score </button>
+            <div id="highScoreContainer">
+            <div id="highscoreHeader">
+                <h3>User Initials</h3>
+                <h3>Score</h3>
+            </div>
+            <div>
+            <button>Play Again</button>
+            <button>Clear Highscores</button>
+            </div>  
         </div>
     </div>
-    <div>
-        <button>Play Again</button>
-        <button>Clear Highscores</button>
-    </div>  
 
     <!-- Javascript link-->
     <script src="./Assets/JS/script.js"> </script>
