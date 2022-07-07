@@ -1,29 +1,25 @@
 //need to create variables
-var quiz = document.getElementById("quiz");
-var resultsE1 = document.getElementById("result");
-var FinalScoreE1 = document.getElementById("finalScore");
-var gameOver = document.getElementById("gameOver");
-var questionsE1 = document.getElementById("questions");
-var quizTimer = document.getElementById("quizTimer");
-var startQuizbBtn = document.getElementById("start");
-var startQuizDiv = document.getElementById("startbtn");
+
+var quizBody = document.getElementById("quiz");
+var resultsEl = document.getElementById("result");
+var finalScoreEl = document.getElementById("finalScore");
+var gameoverDiv = document.getElementById("gameover");
+var questionsEl = document.getElementById("questions");
+var quizTimer = document.getElementById("timer");
+var startQuizButton = document.getElementById("startbtn");
+var startQuizDiv = document.getElementById("startpage");
 var highscoreContainer = document.getElementById("highscoreContainer");
-var highscoreDiv = document.getElementById("highscore");
-var highscoreInput = document.getElementById("quiz");
-var highscoreDisplay = document.getElementById("quiz");
-var endgameBtn = document.getElementById("quiz");
-var submitScoreBtn = document.getElementById("quiz");
-var highscoreDisplay = document.getElementById("quiz");
+var highscoreDiv = document.getElementById("high-scorePage");
+var highscoreInputName = document.getElementById("initials");
+var highscoreDisplayName = document.getElementById("highscore-initials");
+var endGameBtns = document.getElementById("endGameBtns");
+var submitScoreBtn = document.getElementById("submitScore");
+var highscoreDisplayScore = document.getElementById("highscore-score");
 var buttonA = document.getElementById("a");
 var buttonB = document.getElementById("b");
 var buttonC = document.getElementById("c");
 var buttonD = document.getElementById("d");
-var finalQuestionsIndex = document.getElementById("finalIndex");
-var currentQuestionsIndex = document.getElementById("currentIndex");
-var timeLeft = document.getElementById("timeLeft");
-var timeInterval = document.getElementById("timeInterval");
-var score = 0;
-var 
+
 
 //Questions Objects
 var quizQuestions = [{
@@ -86,43 +82,3 @@ var quizQuestions = [{
     correctAnswer: "d",
 },
 ];
-
-//function to cycle objects questions and answers
-function generateQuizQuestion(){
-    if (currentQuestionsIndex === finalQuestionsIndex){
-        return score();
-}
-
-var currentQuestion = quizQuestions[currentQuestionsIndex];
-questionsE1.innerHTML = "<p>" + currentQuestion.question + "</p>";
-buttonA.innerHTML = currentQuestion.choiceA;
-buttonB.innerHTML = currentQuestion.choiceB;
-buttonC.innerHTML = currentQuestion.choiceC;
-buttonD.innerHTML = currentQuestion.choiceD;
-};
-
-//start quiz to start timer
-function startQuizbBtn() {
-    generateQuizQuestion();
-
-    function startTimer(){
-        console.log('timer suppose to go')
-        var sec = 59;
-        var timer = setInterval(function(){
-            document.getElementById('timerDisplay').innerHTML='00:'+sec;
-            sec--;
-            if (sec < 0) {
-                clearInterval(timer);
-                alert("Time is up!")
-            }
-        }, 1000);
-    }
-}
-
-//show scores and save high scores
-
-//clear high scores
-
-//start the quiz
-startQuizDiv.addEventListener("click",startQuizbBtn);
-
