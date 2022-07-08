@@ -1,6 +1,6 @@
 var highScore = document.querySelector("#highScore");
 var clear = document.querySelector("#clear");
-var startOver = document.querySelector("startOver");
+var startOver = document.querySelector("#startOver");
 
 // Clear Scores 
 clear.addEventListener("click", function () {
@@ -21,7 +21,7 @@ if (EveryScore !== null) {
 
     }
 }
-// Go to index page BROKEN
+// Go to index page
 startOver.addEventListener("click", function () {
-    window.location.replace("index.html");
+    window.location.replace("./index.html");
 });

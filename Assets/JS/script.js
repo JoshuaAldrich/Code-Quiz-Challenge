@@ -1,5 +1,5 @@
 // Array of questions
-var quizQuestions = [
+var questions = [
     {
     question: "Which of the following a common application used by programmers?",
     choices: ["AutoCAD","Wrightsoft","Blitz","Visual Studios"],
@@ -34,3 +34,59 @@ var quizQuestions = [
 
 var score = 0;
 var questionIndex = 0;
+
+// Start working code 
+// Variables
+var Time = document.querySelector("#Time");
+var timer = document.querySelector("#startQuiz");
+var questionsDiv = document.querySelector("#questions");
+var container = document.querySelector("#container");
+
+var secondsLeft = 80;
+// Holds interval time
+var holdInterval = 0;
+// Holds penalty time
+var penalty = 15;
+// Creates new element
+var ulCreate = document.createElement("ul");
+
+// Triggers timer on button, shows user a display on the screen
+timer.addEventListener("click", function () {
+    // We are checking zero because its originally set to zero
+    if (holdInterval === 0) {
+        holdInterval = setInterval(function () {
+            secondsLeft--;
+            Time.textContent = "Time: " + secondsLeft;
+
+            if (secondsLeft <= 0) {
+                clearInterval(holdInterval);
+                allDone();
+                currentTime.textContent = "Time's up!";
+            }
+        }, 1000);
+    }
+    render(questionIndex);
+});
+
+// Renders questions and choices to page: 
+function render(questionIndex) {
+    // Clears existing data 
+    questionsDiv.innerHTML = "";
+    ulCreate.innerHTML = "";
+    // For loops to loop through all info in array
+    for (var i = 0; i < questions.length; i++) {
+        // Appends question title only
+        var userQuestion = questions[questionIndex].question;
+        var userChoices = questions[questionIndex].choices;
+        questionsDiv.textContent = userQuestion;
+    }
+    // New for each for question choices
+    userChoices.forEach(function (newItem) {
+        var listItem = document.createElement("li");
+        listItem.textContent = newItem;
+        questionsDiv.appendChild(ulCreate);
+        ulCreate.appendChild(listItem);
+        listItem.addEventListener("click", (compare));
+    })
+}
+
