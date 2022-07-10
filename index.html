@@ -9,17 +9,31 @@
 </head>
 
 <body>
-    <a href="highscores.html">Highscores</a>
+    <header>
+        <!--Add timer and high scores-->
+        <a href="highscores.html" class = highscore>Highscores</a>
+        <div id="time"> Time : <span> 0 </span></div>
+    </header>
+   
     <!--starting page -->
     <div class="container">
-        <!--Add timer-->
-        <div id="Time"></div>
-        <!--Add quiz-->
-        <div id="questions">
+        <div id="startpage" class = "start">
             <h2>Coding Quiz Challenge</h2>
             <p>Answer the following questions within the time limit, for wrong answers you will be deducted time.</p>
-            <ul id="choicesUl"></ul>
-        <button id="startQuiz">Start Quiz</button>
+            <button id="startQuiz">Start Quiz</button>
+        </div>
+
+        <!--Add quiz questions-->
+        <div id="questionpage" class = "hide" >
+
+            <div id = "questions"></div>
+            <ul id="choices">
+                <li><button class="button" id="btn-1"></button></li>
+                <li><button class="button" id="btn-2"></button></li>
+                <li><button class="button" id="btn-3"></button></li>
+                <li><button class="button" id="btn-4"></button></li>
+            </ul>
+            
         </div>
     </div>
     <!-- Javascript link-->

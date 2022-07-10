@@ -1,7 +1,27 @@
+//Global variables
+var time = document.getElementById("time");
+var timer = document.getElementById("startQuiz");
+var questionsDiv = document.getElementById("questions");
+var container = document.getElementById("container");
+var choices = document.getElementById("choices");
+var startpage = document.getElementById("startpage")
+var questionpage = document.getElementById("questionpage")
+
+var score = 0;
+var questionIndex;
+var choicesIndex;
+var secondsLeft = 80;
+// Holds interval time
+var holdInterval = 0;
+// Holds penalty time
+var penalty = 15;
+// Creates new element
+var ulCreate = document.createElement("ul");
+
 // Array of questions
 var questions = [
     {
-    question: "Which of the following a common application used by programmers?",
+    question: "Which of the following is a common application used by programmers?",
     choices: ["AutoCAD","Wrightsoft","Blitz","Visual Studios"],
     answer: "Visual Studios"
 },
@@ -32,23 +52,8 @@ var questions = [
 },
 ];
 
-var score = 0;
-var questionIndex = 0;
+// Start working code
 
-// Start working code 
-// Variables
-var Time = document.querySelector("#Time");
-var timer = document.querySelector("#startQuiz");
-var questionsDiv = document.querySelector("#questions");
-var container = document.querySelector("#container");
-
-var secondsLeft = 80;
-// Holds interval time
-var holdInterval = 0;
-// Holds penalty time
-var penalty = 15;
-// Creates new element
-var ulCreate = document.createElement("ul");
 
 // Triggers timer on button, shows user a display on the screen
 timer.addEventListener("click", function () {
@@ -56,7 +61,7 @@ timer.addEventListener("click", function () {
     if (holdInterval === 0) {
         holdInterval = setInterval(function () {
             secondsLeft--;
-            Time.textContent = "Time: " + secondsLeft;
+            time.textContent = "Time: " + secondsLeft;
 
             if (secondsLeft <= 0) {
                 clearInterval(holdInterval);
@@ -65,28 +70,30 @@ timer.addEventListener("click", function () {
             }
         }, 1000);
     }
-    render(questionIndex);
+    questionpage.classList.remove('hide');
+    showQuestion();
+    showChoices();
+    return questionIndex;
 });
 
 // Renders questions and choices to page: 
-function render(questionIndex) {
+function showQuestion() {
     // Clears existing data 
     questionsDiv.innerHTML = "";
     ulCreate.innerHTML = "";
-    // For loops to loop through all info in array
-    for (var i = 0; i < questions.length; i++) {
-        // Appends question title only
-        var userQuestion = questions[questionIndex].question;
-        var userChoices = questions[questionIndex].choices;
+    for (var i = 0; i < questions.length; i++)
+        // Appends question only
+        var userQuestion = questions[0].question;
         questionsDiv.textContent = userQuestion;
-    }
-    // New for each for question choices
-    userChoices.forEach(function (newItem) {
-        var listItem = document.createElement("li");
-        listItem.textContent = newItem;
-        questionsDiv.appendChild(ulCreate);
-        ulCreate.appendChild(listItem);
-        listItem.addEventListener("click", (compare));
-    })
-}
+    };
 
+
+function showChoices() {
+    for (var i = 0; i < questions.length; i++)
+    //Appends choices only
+    var userChoices = questions[0].choices;
+    choices.textContent = userChoices;
+    };
+
+
+      
