@@ -4,8 +4,8 @@ var timer = document.getElementById("startQuiz");
 var questionsDiv = document.getElementById("questions");
 var container = document.getElementById("container");
 var choices = document.getElementById("choices");
-var startpage = document.getElementById("startpage")
-var questionpage = document.getElementById("questionpage")
+var startPage = document.getElementById("startPage")
+var questionPage = document.getElementById("questionPage")
 
 var score = 0;
 var questionIndex;
@@ -70,7 +70,8 @@ timer.addEventListener("click", function () {
             }
         }, 1000);
     }
-    questionpage.classList.remove('hide');
+    startPage.classList.add('hide');
+    questionPage.classList.remove('hide');
     showQuestion();
     showChoices();
     return questionIndex;
@@ -86,7 +87,6 @@ function showQuestion() {
         var userQuestion = questions[0].question;
         questionsDiv.textContent = userQuestion;
     };
-
 
 function showChoices() {
     for (var i = 0; i < questions.length; i++)
