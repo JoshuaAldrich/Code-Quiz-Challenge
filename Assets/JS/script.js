@@ -6,6 +6,10 @@ var container = document.getElementById("container");
 var choices = document.getElementById("choices");
 var startPage = document.getElementById("startPage")
 var questionPage = document.getElementById("questionPage")
+var btn1 = document.getElementById("btn-1")
+var btn2 = document.getElementById("btn-2")
+var btn3 = document.getElementById("btn-3")
+var btn4 = document.getElementById("btn-4")
 
 var score = 0;
 var questionIndex;
@@ -80,12 +84,12 @@ timer.addEventListener("click", function () {
 // Renders questions and choices to page: 
 function showQuestion() {
     // Clears existing data 
-    questionsDiv.innerHTML = "";
-    ulCreate.innerHTML = "";
-    for (var i = 0; i < questions.length; i++)
+    // questionsDiv.innerHTML = "";
+    // ulCreate.innerHTML = "";
+    for (var i = 0; i < questions.length; i++){
         // Appends question only
         var userQuestion = questions[0].question;
-        questionsDiv.textContent = userQuestion;
+        questionsDiv.textContent = userQuestion;}
     };
 
 function showChoices() {
@@ -93,7 +97,9 @@ function showChoices() {
     //Appends choices only
     var userChoices = questions[0].choices;
     choices.textContent = userChoices;
+    btn1.textContent = questions[0].choices;
+    btn2.textContent = questions[1].choices;
+    btn3.textContent = questions[2].choices;
+    btn4.textContent = questions[3].choices;
+    
     };
-
-
-      

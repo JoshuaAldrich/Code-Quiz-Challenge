@@ -8,7 +8,11 @@
 *{
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: large;
-}    
+}  
+
+.hide {
+    display: none;
+}
 
 .highscore {
     text-align: left;
@@ -19,11 +23,6 @@
     text-align: right;
     text-align: right;
 }
-
-.hide {
-    display: none;
-}
-
 
 ul{
     color: black;
@@ -36,6 +35,10 @@ h2{
 p{
     color: var(--primary);
     text-shadow: .5px .5px var(--tertiary);
+}
+
+.choices {
+    flex-direction: column;
 }
     
 .container{
@@ -61,7 +64,7 @@ p{
 button {
     display: inline-block;
     background-color: var(--secondary);
-    border-radius: 15px;
+    border-radius: 30px;
     border: 5px double var(--tertiary);
     color: white;
     font-size: 20px;
@@ -72,27 +75,5 @@ button {
     
 button:hover{
     background-color: var(--tertiary);
-}
-
-#startOver {
-    position: relative;
-    padding: 10px;
-    font-size: 20px;
-    color: white;
-    top: 30%;
-    width: auto;
-    text-align: center;
-    text-decoration: none;
-}
-
-#clear {
-    position: relative;
-    padding: 10px;
-    font-size: 20px;
-    color: white;
-    top: 30%;
-    width: auto;
-    text-align: center;
-    text-decoration: none;
 }
 
