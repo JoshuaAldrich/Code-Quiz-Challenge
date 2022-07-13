@@ -1,7 +1,7 @@
 //Global variables
 var time = document.getElementById("time");
 var timer = document.getElementById("startQuiz");
-var questionsDiv = document.getElementById("questions");
+var titleDiv = document.getElementById("QTitle");
 var container = document.getElementById("container");
 var choicesEl = document.getElementById("choices");
 var startPage = document.getElementById("startPage");
@@ -76,35 +76,54 @@ timer.addEventListener("click", function () {
 // Renders questions and choices to page: 
 function showQuestion(){
     var displayQuest = questions[questionIndex];
-    questionsDiv.textContent = displayQuest.question;
-     for (let i = 0; i < displayQuest.choices.length; i++) {
-    const element = displayQuest.choices[i];
-    var createButton = document.createElement("button")
-    createButton.setAttribute("class", choices)
-    createButton.setAttribute("value", choices)
-    createButton.textContent = i + 1 + ". " + element;
-    choicesEl.appendChild(createButton);
-  }
+    titleDiv.textContent = displayQuest.question;
+
+// Choices made and populating
+function C(choice,i){
+        choicesEl.innerHTML = "";
+    for (let i = 0; i < displayQuest.choices.length; i++) {
+        const element = displayQuest.choices[i];
+        var createButton = document.createElement("button")
+        createButton.setAttribute("class", choice)
+        createButton.setAttribute("value", choice)
+        createButton.textContent = i + 1 + ". " + element;
+        createButton.onclick = nextQuestion;
+        choicesEl.appendChild(createButton);
 }
+  }
+  C();
+};
+
+function nextQuestion() {
+    if (this.value === questions[questionIndex].answer) {
+        alert("Correct")
+    } else {
+        alert("Wrong")
+        // time -= 10;
+    }
+    questionIndex++;
+    showQuestion();
+    //add function that if questionIndex == questions.length end game if and else statements.
+};
 
 //add ability to click buttons
-var choice1 = choices[0];
-var choice2 = choices[1];
-var choice3 = choices[2];
-var choice4 = choices[3];
-console.log(choice1);
-createButton.addEventListener("click", function() {
-    document.getElementsByClassName("choices".textContent);
-});
-choice2.addEventListener("click", function() {
-    selectedChoice(choice2.textContent);
-});
-choice3.addEventListener("click", function() {
-    selectedChoice(choice3.textContent);
-});
-choice4.addEventListener("click", function() {
-    selectedChoice(choice4.textContent);
-});
+// var choice1 = choices[0];
+// var choice2 = choices[1];
+// var choice3 = choices[2];
+// var choice4 = choices[3];
+// console.log(choice1);
+// choice1.addEventListener("click", function() {
+//     document.getElementsByClassName("choices".textContent);
+// });
+// choice2.addEventListener("click", function() {
+//     selectedChoice(choice2.textContent);
+// });
+// choice3.addEventListener("click", function() {
+//     selectedChoice(choice3.textContent);
+// });
+// choice4.addEventListener("click", function() {
+//     selectedChoice(choice4.textContent);
+// });
 
 
 // function checkAnswers(){
