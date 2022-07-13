@@ -64,7 +64,7 @@ timer.addEventListener("click", function () {
 
             if (secondsLeft <= 0) {
                 clearInterval(holdInterval);
-                allDone();
+                endGame();
                 currentTime.textContent = "Time's up!";
             }
         }, 1000);
@@ -103,11 +103,20 @@ function nextQuestion() {
         secondsLeft -= penalty;
         secondsLeft--;
     }
-    questionIndex++;
-    showQuestion();
-    //add function that if questionIndex == questions.length end game if and else statements.
+    if (questionIndex == questions.length - 1) {
+        endGame();
+    } else {
+        questionIndex++;
+        showQuestion();
+    }
+console.log(questionIndex);
+console.log(questions.length);
 };
 
+function endGame() {
+    clearInterval(holdInterval);
+    time.textContent = "Game Over!";
+}
 //add ability to click buttons
 // var choice1 = choices[0];
 // var choice2 = choices[1];
