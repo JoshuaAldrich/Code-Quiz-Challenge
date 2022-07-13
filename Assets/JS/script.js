@@ -6,6 +6,7 @@ var container = document.getElementById("container");
 var choicesEl = document.getElementById("choices");
 var startPage = document.getElementById("startPage");
 var questionPage = document.getElementById("questionPage");
+// var feedBack = getElementById("feedback")
 
 var score = 0;
 var questionIndex = 0;
@@ -79,13 +80,13 @@ function showQuestion(){
     titleDiv.textContent = displayQuest.question;
 
 // Choices made and populating
-function C(choice,i){
+function C(element,i){
         choicesEl.innerHTML = "";
     for (let i = 0; i < displayQuest.choices.length; i++) {
         const element = displayQuest.choices[i];
         var createButton = document.createElement("button")
-        createButton.setAttribute("class", choice)
-        createButton.setAttribute("value", choice)
+        createButton.setAttribute("class", "feedBack")
+        createButton.setAttribute("value", element)
         createButton.textContent = i + 1 + ". " + element;
         createButton.onclick = nextQuestion;
         choicesEl.appendChild(createButton);
@@ -96,10 +97,11 @@ function C(choice,i){
 
 function nextQuestion() {
     if (this.value === questions[questionIndex].answer) {
-        alert("Correct")
+        alert("Right")
     } else {
         alert("Wrong")
-        // time -= 10;
+        time -= penalty;
+        secondsLeft--;
     }
     questionIndex++;
     showQuestion();
