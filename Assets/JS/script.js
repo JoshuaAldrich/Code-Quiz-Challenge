@@ -3,24 +3,18 @@ var time = document.getElementById("time");
 var timer = document.getElementById("startQuiz");
 var questionsDiv = document.getElementById("questions");
 var container = document.getElementById("container");
-var choices = document.getElementById("choices");
-var startPage = document.getElementById("startPage")
-var questionPage = document.getElementById("questionPage")
-var btn1 = document.getElementById("btn-1")
-var btn2 = document.getElementById("btn-2")
-var btn3 = document.getElementById("btn-3")
-var btn4 = document.getElementById("btn-4")
+var choicesEl = document.getElementById("choices");
+var startPage = document.getElementById("startPage");
+var questionPage = document.getElementById("questionPage");
 
 var score = 0;
-var questionIndex;
-var choicesIndex;
+var questionIndex = 0;
+var choicesIndex = 0;
 var secondsLeft = 80;
 // Holds interval time
 var holdInterval = 0;
 // Holds penalty time
 var penalty = 15;
-// Creates new element
-var ulCreate = document.createElement("ul");
 
 // Array of questions
 var questions = [
@@ -77,29 +71,49 @@ timer.addEventListener("click", function () {
     startPage.classList.add('hide');
     questionPage.classList.remove('hide');
     showQuestion();
-    showChoices();
-    return questionIndex;
 });
 
 // Renders questions and choices to page: 
-function showQuestion() {
-    // Clears existing data 
-    // questionsDiv.innerHTML = "";
-    // ulCreate.innerHTML = "";
-    for (var i = 0; i < questions.length; i++){
-        // Appends question only
-        var userQuestion = questions[0].question;
-        questionsDiv.textContent = userQuestion;}
-    };
+function showQuestion(){
+    var displayQuest = questions[questionIndex];
+    questionsDiv.textContent = displayQuest.question;
+     for (let i = 0; i < displayQuest.choices.length; i++) {
+    const element = displayQuest.choices[i];
+    var createButton = document.createElement("button")
+    createButton.setAttribute("class", choices)
+    createButton.setAttribute("value", choices)
+    createButton.textContent = i + 1 + ". " + element;
+    choicesEl.appendChild(createButton);
+  }
+}
 
-function showChoices() {
-    for (var i = 0; i < questions.length; i++)
-    //Appends choices only
-    var userChoices = questions[0].choices;
-    choices.textContent = userChoices;
-    btn1.textContent = questions[0].choices;
-    btn2.textContent = questions[1].choices;
-    btn3.textContent = questions[2].choices;
-    btn4.textContent = questions[3].choices;
-    
-    };
+//add ability to click buttons
+var choice1 = choices[0];
+var choice2 = choices[1];
+var choice3 = choices[2];
+var choice4 = choices[3];
+console.log(choice1);
+createButton.addEventListener("click", function() {
+    document.getElementsByClassName("choices".textContent);
+});
+choice2.addEventListener("click", function() {
+    selectedChoice(choice2.textContent);
+});
+choice3.addEventListener("click", function() {
+    selectedChoice(choice3.textContent);
+});
+choice4.addEventListener("click", function() {
+    selectedChoice(choice4.textContent);
+});
+
+
+// function checkAnswers(){
+//     var selectedChoice = questions[questionIndex].selectedChoice;
+//     if (answer === selectedChoice){} 
+//     showQuestion();
+       
+//     else { 
+//        showQuestion();
+//        timer -= 10;
+//    }
+//    };

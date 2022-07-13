@@ -1,3 +1,7 @@
+.hide {
+    display: none;
+}
+
 :root{
     background-color: lightgray;
     --primary:black;
@@ -9,10 +13,6 @@
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: large;
 }  
-
-.hide {
-    display: none;
-}
 
 .highscore {
     text-align: left;
