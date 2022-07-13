@@ -100,7 +100,7 @@ function nextQuestion() {
         alert("Right")
     } else {
         alert("Wrong")
-        time -= penalty;
+        secondsLeft -= penalty;
         secondsLeft--;
     }
     questionIndex++;
