@@ -115,35 +115,6 @@ console.log(questions.length);
 
 function endGame() {
     clearInterval(holdInterval);
-    time.textContent = "Game Over!";
+    questionPage.classList.add("hide");
+    window.location.replace("highscores.html");
 }
-//add ability to click buttons
-// var choice1 = choices[0];
-// var choice2 = choices[1];
-// var choice3 = choices[2];
-// var choice4 = choices[3];
-// console.log(choice1);
-// choice1.addEventListener("click", function() {
-//     document.getElementsByClassName("choices".textContent);
-// });
-// choice2.addEventListener("click", function() {
-//     selectedChoice(choice2.textContent);
-// });
-// choice3.addEventListener("click", function() {
-//     selectedChoice(choice3.textContent);
-// });
-// choice4.addEventListener("click", function() {
-//     selectedChoice(choice4.textContent);
-// });
-
-
-// function checkAnswers(){
-//     var selectedChoice = questions[questionIndex].selectedChoice;
-//     if (answer === selectedChoice){} 
-//     showQuestion();
-       
-//     else { 
-//        showQuestion();
-//        timer -= 10;
-//    }
-//    };
