@@ -6,6 +6,7 @@ var container = document.getElementById("container");
 var choicesEl = document.getElementById("choices");
 var startPage = document.getElementById("startPage");
 var questionPage = document.getElementById("questionPage");
+var SaveScore = document.getElementById("initials");
 // var feedBack = getElementById("feedback")
 
 var score = 0;
@@ -116,5 +117,21 @@ console.log(questions.length);
 function endGame() {
     clearInterval(holdInterval);
     questionPage.classList.add("hide");
-    window.location.replace("highscores.html");
+    saveHighscore();
 }
+
+function saveHighscore() {
+    var input = initialsEl.value;
+    var UserHs = document.getElementById("UserHs");
+    var hsSave = document.getElementById("hsSave");
+    SaveScore.classList.remove("hide");
+    UserHs.textContent = "Score: " + secondsLeft;
+
+
+
+    hsSave.addEventListener("click", function () {
+        window.location.replace("highscores.html");
+    }
+    )
+}
+
