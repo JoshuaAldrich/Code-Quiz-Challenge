@@ -120,18 +120,16 @@ function endGame() {
     saveHighscore();
 }
 
+var hsSave = document.getElementById("hsSave");
 function saveHighscore() {
-    var input = initialsEl.value;
     var UserHs = document.getElementById("UserHs");
-    var hsSave = document.getElementById("hsSave");
+
     SaveScore.classList.remove("hide");
     UserHs.textContent = "Score: " + secondsLeft;
 
-
-
-    hsSave.addEventListener("click", function () {
-        window.location.replace("highscores.html");
     }
-    )
-}
+hsSave.addEventListener("click", function () {
+    window.location.replace("highscores.html");
+    
+});
 
