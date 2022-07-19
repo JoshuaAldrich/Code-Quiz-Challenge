@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Quiz Challenge</title>
+    <link rel="stylesheet" href="/Assets/CSS/styles.css">
+</head>
+
+<body>
+    <header>
+        <!--Add timer and high scores-->
+        <a href="highscores.html" class = highscore>Highscores</a>
+        <div id="time"> Time : <span> 0 </span></div>
+    </header>
+   
+    <!--starting page -->
+    <div class="container">
+        <div id="startPage" class = "start">
+            <h2>Coding Quiz Challenge</h2>
+            <p>Answer the following questions within the time limit, for wrong answers you will be deducted time.</p>
+            <button id="startQuiz">Start Quiz</button>
+        </div>
+
+        <!--Add quiz questions-->
+        <div id="questionPage" class = "hide" >
+
+            <h3 id = "QTitle"></h3>
+            <div id="choices"></div>
+            <div id = "feedback"></div>
+        </div>
+
+        <div id="save-initials" class = "hide">
+            <h3 id = UserHs></h3>
+            <input id="initials" type="text" min="2" max="3"></input>
+            <button id= "hsSave">Save</button>
+
+        </div>
+    </div>
+    <!-- Javascript link-->
+    <script src="./Assets/JS/script.js"> </script>
+</body>
+</html>
